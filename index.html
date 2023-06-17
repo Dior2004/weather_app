@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#222831" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main_weather_side">
+        <div class="content">
+          <div class="date_wrap">
+            <h2 id="dayTime"></h2>
+            <span style="margin-top: 5px; display: flex; align-items: center">
+              <img
+                style="margin-right: 7.5px; width: 20px"
+                src="https://img.icons8.com/fluency-systems-regular/96/ffffff/calendar--v1.png"
+              />
+              <p id="currentDate"></p>
+            </span>
+            <span style="margin-top: 10px; display: flex; align-items: center">
+              <img
+                style="margin-right: 2px; width: 20px"
+                src="https://img.icons8.com/fluency-systems-regular/96/ffffff/marker--v1.png"
+              />
+              <p id="location_name"></p>
+            </span>
+          </div>
+          <div class="temperature_wrap">
+            <span style="display: flex; align-items: center">
+              <img
+                id="mainIcon"
+                style="width: 70px; height: 70px; margin-left: -20px"
+                src=""
+                alt="icon"
+              />
+              <h3 id="weatherCondition"></h3>
+            </span>
+            <h1 id="temperature"></h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Further detail side -->
+
+      <div class="futher_info">
+        <div class="char">
+          <span>PRESSURE</span>
+          <span id="pressure">0 hPa</span>
+        </div>
+        <div class="char">
+          <span>HUMIDITY</span>
+          <span id="humidity">0 %</span>
+        </div>
+        <div class="char">
+          <span>WIND</span>
+          <span id="wind">0 km/h</span>
+        </div>
+
+        <ul id="week_days_wrap">
+          <li class="list">
+            <img id="day1icon" alt="icon" />
+            <span id="day1_time">---</span>
+            <sapn style="font-weight: 600" id="day1_temp">--°C</sapn>
+          </li>
+          <li class="list">
+            <img id="day2icon" alt="icon" />
+            <span id="day2_time">---</span>
+            <sapn style="font-weight: 600" id="day2_temp">--°C</sapn>
+          </li>
+          <li class="list">
+            <img id="day3icon" alt="icon" />
+            <span id="day3_time">---</span>
+            <sapn style="font-weight: 600" id="day3_temp">--°C</sapn>
+          </li>
+        </ul>
+
+        <div class="wrapper">
+          <div id="locationChange">
+            <img
+              style="margin-right: 2px; width: 20px"
+              src="https://img.icons8.com/fluency-systems-regular/96/ffffff/marker--v1.png"
+            />
+            Change Location
+          </div>
+          <div class="search_area">
+            <form id="searchForm" type="submit">
+              <input
+                id="newLocation"
+                type="text"
+                placeholder="Search for new Location"
+              />
+            </form>
+            <button id="returnBack">
+              <img
+                style="padding-top: 3px"
+                width="20"
+                src="https://img.icons8.com/ios-filled/50/ffffff/right--v1.png"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
