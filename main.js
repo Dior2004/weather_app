@@ -1,61 +1,41 @@
 const findMyState = () => {
-  let state = "";
+  let address = "";
 
   const success = async (coordinates) => {
-    const latitude = coordinates.coords.latitude;
-    const longitude = coordinates.coords.longitude;
-
-    const myApiKey = "dd0bf32f77ee4f3982ab885b6cca2bff";
-    const geoApiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude
-      .toString()
-      .slice(0, 5)}+${longitude.toString().slice(0, 5)}&key=${myApiKey}`;
-
-    await fetch(geoApiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        state = data.results[0].components.state
-          ? data.results[0].components.state
-          : data.results[0].components.city
-          ? data.results[0].components.city
-          : data.results[0].components.town
-          ? data.results[0].components.town
-          : data.results[0].components.county
-          ? data.results[0].components.county
-          : data.results[0].components.region
-          ? data.results[0].components.region
-          : data.results[0].components.country;
-
-        console.log(data);
-        defaultWeatherInfo(state);
-
-        function searchForNewPlace(e) {
-          e.preventDefault();
-          defaultWeatherInfo(state);
-          newLocation.value = "";
-        }
-
-        searchForm.addEventListener("submit", searchForNewPlace);
-        returnBack.addEventListener("click", searchForNewPlace);
-      });
-  };
-
-  const error = () => {
-    state = "Washington";
-    defaultWeatherInfo(state);
+    address = coordinates.coords.latitude + "," + coordinates.coords.longitude;
 
     function searchForNewPlace(e) {
       e.preventDefault();
-      defaultWeatherInfo(state);
+      defaultWeatherInfo(address);
       newLocation.value = "";
     }
 
-    searchForm.addEventListener("submit", searchForNewPlace);
-    returnBack.addEventListener("click", searchForNewPlace);
+    defaultWeatherInfo(address);
+
+    functionCall(searchForNewPlace);
   };
 
-  async function defaultWeatherInfo(state) {
-    const freeWeatherApi = `https://api.weatherapi.com/v1/forecast.json?key=644f6ce0ca9e401ebb891832211707&q=${
-      newLocation.value.trim() === "" ? state : newLocation.value.trim()
+  const error = () => {
+    address = "Washington";
+    defaultWeatherInfo(address);
+
+    function searchForNewPlace(e) {
+      e.preventDefault();
+      defaultWeatherInfo(address);
+      newLocation.value = "";
+    }
+
+    functionCall(searchForNewPlace);
+  };
+
+  function functionCall(searchForNewPlace) {
+    searchForm.addEventListener("submit", searchForNewPlace);
+    returnBack.addEventListener("click", searchForNewPlace);
+  }
+
+  async function defaultWeatherInfo(address) {
+    const freeWeatherApi = `https://api.weatherapi.com/v1/forecast.json?key=039ce398b86741b895820456231506&q=${
+      newLocation.value.trim() === "" ? address : newLocation.value.trim()
     }&days=7&aqi=yes&alerts=yes`;
     await fetch(freeWeatherApi)
       .then((data) => data.json())
