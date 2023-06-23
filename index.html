@@ -13,33 +13,67 @@
       <div class="main_weather_side">
         <div class="content">
           <div class="date_wrap">
-            <h2 id="dayTime"></h2>
+            <div
+              style="
+                width: 60%;
+                height: 30px;
+                font-size: 24px;
+                font-weight: 600;
+              "
+              id="dayTime"
+              class="skeleton"
+            ></div>
             <span style="margin-top: 5px; display: flex; align-items: center">
               <img
-                style="margin-right: 7.5px; width: 20px"
+                style="margin-right: 7px; width: 20px"
                 src="https://img.icons8.com/fluency-systems-regular/96/ffffff/calendar--v1.png"
               />
-              <p id="currentDate"></p>
+              <div
+                style="width: 60%; height: 20px; font-size: 16px"
+                class="skeleton"
+                id="currentDate"
+              ></div>
             </span>
             <span style="margin-top: 10px; display: flex; align-items: center">
               <img
-                style="margin-right: 2px; width: 20px"
+                style="margin-right: 7px; width: 20px"
                 src="https://img.icons8.com/fluency-systems-regular/96/ffffff/marker--v1.png"
               />
-              <p id="location_name"></p>
+              <div
+                style="width: 80%; height: 20px; font-size: 16px"
+                class="skeleton"
+                id="location_name"
+              ></div>
             </span>
           </div>
           <div class="temperature_wrap">
-            <span style="display: flex; align-items: center">
-              <img
-                id="mainIcon"
-                style="width: 70px; height: 70px; margin-left: -20px"
-                src=""
-                alt="icon"
-              />
-              <h3 id="weatherCondition"></h3>
+            <span
+              style="display: flex; align-items: center; margin-bottom: 5px"
+            >
+              <div class="imgicon skeleton">
+                <img id="mainIcon" style="width: 70px; height: 70px" src="" />
+              </div>
+              <div
+                class="skeleton"
+                style="
+                  width: 100px;
+                  height: 23px;
+                  font-size: 19px;
+                  font-weight: 600;
+                "
+                id="weatherCondition"
+              ></div>
             </span>
-            <h1 id="temperature"></h1>
+            <div
+              class="skeleton"
+              style="
+                min-width: 170px;
+                height: 65px;
+                font-size: 60px;
+                font-weight: 600;
+              "
+              id="temperature"
+            ></div>
           </div>
         </div>
       </div>
