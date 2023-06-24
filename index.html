@@ -13,73 +13,37 @@
       <div class="main_weather_side">
         <div class="content">
           <div class="date_wrap">
-            <div
-              style="
-                width: 60%;
-                height: 30px;
-                font-size: 24px;
-                font-weight: 600;
-              "
-              id="dayTime"
-              class="skeleton"
-            ></div>
+            <h2 id="dayTime">Weekday</h2>
             <span style="margin-top: 5px; display: flex; align-items: center">
               <img
                 style="margin-right: 7px; width: 20px"
                 src="https://img.icons8.com/fluency-systems-regular/96/ffffff/calendar--v1.png"
               />
-              <div
-                style="width: 60%; height: 20px; font-size: 16px"
-                class="skeleton"
-                id="currentDate"
-              ></div>
+              <p id="currentDate">Current Date</p>
             </span>
             <span style="margin-top: 10px; display: flex; align-items: center">
               <img
                 style="margin-right: 7px; width: 20px"
                 src="https://img.icons8.com/fluency-systems-regular/96/ffffff/marker--v1.png"
               />
-              <div
-                style="width: 80%; height: 20px; font-size: 16px"
-                class="skeleton"
-                id="location_name"
-              ></div>
+              <p id="location_name">Current Location</p>
             </span>
           </div>
           <div class="temperature_wrap">
-            <span
-              style="display: flex; align-items: center; margin-bottom: 5px"
-            >
-              <div class="imgicon skeleton">
-                <img id="mainIcon" style="width: 70px; height: 70px" src="" />
-              </div>
-              <div
-                class="skeleton"
-                style="
-                  width: 100px;
-                  height: 23px;
-                  font-size: 19px;
-                  font-weight: 600;
-                "
-                id="weatherCondition"
-              ></div>
+            <span style="display: flex; align-items: center">
+              <img
+                id="mainIcon"
+                style="width: 70px; height: 70px; margin-left: -20px"
+                src=""
+                alt=" "
+              />
+              <h3 id="weatherCondition">Weather Condition</h3>
             </span>
-            <div
-              class="skeleton"
-              style="
-                min-width: 170px;
-                height: 65px;
-                font-size: 60px;
-                font-weight: 600;
-              "
-              id="temperature"
-            ></div>
+            <h1 id="temperature">0°C</h1>
           </div>
         </div>
       </div>
-
       <!-- Further detail side -->
-
       <div class="futher_info">
         <div class="char">
           <span>PRESSURE</span>
@@ -93,25 +57,23 @@
           <span>WIND</span>
           <span id="wind">0 km/h</span>
         </div>
-
         <ul id="week_days_wrap">
           <li class="list">
             <img id="day1icon" alt="icon" />
-            <span id="day1_time">---</span>
-            <sapn style="font-weight: 600" id="day1_temp">--°C</sapn>
+            <span id="day1_time">Mon</span>
+            <sapn style="font-weight: 600" id="day1_temp">0°C</sapn>
           </li>
           <li class="list">
             <img id="day2icon" alt="icon" />
-            <span id="day2_time">---</span>
-            <sapn style="font-weight: 600" id="day2_temp">--°C</sapn>
+            <span id="day2_time">Tue</span>
+            <sapn style="font-weight: 600" id="day2_temp">0°C</sapn>
           </li>
           <li class="list">
             <img id="day3icon" alt="icon" />
-            <span id="day3_time">---</span>
-            <sapn style="font-weight: 600" id="day3_temp">--°C</sapn>
+            <span id="day3_time">Wed</span>
+            <sapn style="font-weight: 600" id="day3_temp">0°C</sapn>
           </li>
         </ul>
-
         <div class="wrapper">
           <div id="locationChange">
             <img
@@ -140,7 +102,6 @@
         </div>
       </div>
     </div>
-
     <script src="./main.js"></script>
   </body>
 </html>
