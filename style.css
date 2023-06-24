@@ -258,6 +258,10 @@ body {
 }
 
 @media (max-width: 500px) {
+  body {
+    background-color: #222831;
+  }
+
   .container {
     width: 100%;
     height: 100%;
