@@ -35,12 +35,11 @@ body {
   align-items: center;
   justify-content: center;
   transition: 0.5s;
-  transform: scale(1);
 }
 
 svg {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   position: relative;
   animation: rotate 2s linear infinite;
 }

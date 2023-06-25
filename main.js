@@ -1,7 +1,11 @@
+loaderValue.innerText = "Waiting your permission...";
+
 const findMyState = () => {
   let address = "";
 
   const success = async (coordinates) => {
+    loaderValue.innerText = "Loading...";
+
     address = coordinates.coords.latitude + "," + coordinates.coords.longitude;
 
     function searchForNewPlace(e) {
@@ -16,6 +20,8 @@ const findMyState = () => {
   };
 
   const error = () => {
+    loaderValue.innerText = "Loading...";
+
     address = "Washington";
     defaultWeatherInfo(address);
 
@@ -91,7 +97,7 @@ const findMyState = () => {
     function loaderFN(i) {
       if (i !== "Weekend") {
         loaderPage.style =
-          "backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
+          "background-color: #2323a500; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
         setTimeout(() => {
           loaderPage.style = "display: none;";
         }, 510);
