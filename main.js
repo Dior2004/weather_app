@@ -1,11 +1,9 @@
-loaderValue.innerText = "Waiting...";
+loaderValue.innerText = "Loading...";
 
 const findMyState = () => {
   let address = "";
 
   const success = async (coordinates) => {
-    loaderValue.innerText = "Loading...";
-
     address = coordinates.coords.latitude + "," + coordinates.coords.longitude;
 
     function searchForNewPlace(e) {
@@ -20,8 +18,6 @@ const findMyState = () => {
   };
 
   const error = () => {
-    loaderValue.innerText = "Loading...";
-
     address = "Washington";
     defaultWeatherInfo(address);
 
