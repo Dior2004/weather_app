@@ -85,7 +85,7 @@ const findMyState = () => {
       Sun: "Sunday",
     };
 
-    dayTime.innerText = dayIndexNameMappings[dayIndexName] || "";
+    dayTime.innerText = dayIndexNameMappings[dayIndexName] || "Weekday";
 
     currentDate.innerText = `${crDate.slice(8, 10)} ${
       months[parseInt(crDate.slice(5, 7) - 1)]
@@ -156,3 +156,7 @@ const findMyState = () => {
 };
 
 findMyState();
+
+window.addEventListener("load", function () {
+  loaderPage.style.display = "none";
+});
