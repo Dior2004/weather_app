@@ -1,4 +1,4 @@
-loaderValue.innerText = "Waiting your permission...";
+loaderValue.innerText = "Waiting...";
 
 const findMyState = () => {
   let address = "";
