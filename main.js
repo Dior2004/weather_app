@@ -86,6 +86,21 @@ const findMyState = () => {
     };
 
     dayTime.innerText = dayIndexNameMappings[dayIndexName] || "Weekday";
+    let dayTimeVar = dayTime.innerText;
+
+    function loaderFN(i) {
+      if (i !== "Weekend") {
+        loaderPage.style =
+          "backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
+        setTimeout(() => {
+          loaderPage.style = "display: none;";
+        }, 510);
+      } else {
+        loaderPage.style.display = "flex";
+      }
+    }
+
+    loaderFN(dayTimeVar);
 
     currentDate.innerText = `${crDate.slice(8, 10)} ${
       months[parseInt(crDate.slice(5, 7) - 1)]
@@ -156,9 +171,3 @@ const findMyState = () => {
 };
 
 findMyState();
-
-window.addEventListener("load", function () {
-  this.setTimeout(() => {
-    loaderPage.style.display = "none";
-  }, 2000)
-});
