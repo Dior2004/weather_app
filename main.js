@@ -99,7 +99,7 @@ const findMyState = () => {
         loaderPage.style =
           "background-color: #2323a500; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
         setTimeout(() => {
-          loaderPage.style = "display: none;";
+          loaderPage.classList.remove("loaderPage");
         }, 510);
       } else {
         loaderPage.style.display = "flex";
