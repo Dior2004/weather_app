@@ -158,5 +158,7 @@ const findMyState = () => {
 findMyState();
 
 window.addEventListener("load", function () {
-  loaderPage.style.display = "none";
+  this.setTimeout(() => {
+    loaderPage.style.display = "none";
+  }, 2000)
 });
