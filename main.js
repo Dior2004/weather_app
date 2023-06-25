@@ -176,5 +176,4 @@ const findMyState = () => {
   }); // success & error functions
 };
 
-setInterval(findMyState, 15 * 60 * 1000);
 findMyState();
