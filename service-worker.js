@@ -1,18 +1,24 @@
-const cacheName = "weather-app version2";
+const cacheName = "weather-app version1";
 
-// const cacheAssets = ["/", "index.html", "/style.css", "/main.js"];
+const cacheAssets = [
+  "/",
+  "/favicon.ico",
+  "index.html",
+  "/style.css",
+  "/main.js",
+];
 
 self.addEventListener("install", (event) => {
   console.log("service-worker installed");
-  // event.waitUntil(
-  //   caches
-  //     .open(cacheName)
-  //     .then((cache) => {
-  //       console.log("service-worker cashing");
-  //       cache.addAll(cacheAssets);
-  //     })
-  //     .then(() => self.skipWaiting())
-  // );
+  event.waitUntil(
+    caches
+      .open(cacheName)
+      .then((cache) => {
+        console.log("service-worker cashing");
+        cache.addAll(cacheAssets);
+      })
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener("activate", (event) => {
@@ -32,23 +38,10 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-self.addEventListener("fetch", (e) => {
-  e.respondWith(
-    fetch(e.request)
-      .then((res) => {
-        const resClone = res.clone();
-
-        caches.open(cacheName).then((cache) => cache.put(e.request, resClone));
-        return res;
-      })
-      .catch((err) => caches.match(e.request).then((res) => res))
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
   );
 });
-
-// self.addEventListener("fetch", (event) => {
-//   event.respondWith(
-//     caches.match(event.request).then((response) => {
-//       return response || fetch(event.request);
-//     })
-//   );
-// });
