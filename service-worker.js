@@ -9,12 +9,10 @@ const cacheAssets = [
 ];
 
 self.addEventListener("install", (event) => {
-  console.log("service-worker installed");
   event.waitUntil(
     caches
       .open(cacheName)
       .then((cache) => {
-        console.log("service-worker cashing");
         cache.addAll(cacheAssets);
       })
       .then(() => self.skipWaiting())
@@ -22,14 +20,11 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("activate", (event) => {
-  console.log("service-worker activated");
-
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((currentCache) => {
           if (currentCache !== cacheName) {
-            console.log("service-worker clearing old caches");
             return caches.delete(currentCache);
           }
         })
