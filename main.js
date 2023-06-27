@@ -93,7 +93,7 @@ const findMyState = () => {
     function loaderFN(i) {
       if (i !== "Weekend") {
         loaderPage.style =
-          "background-color: #2323a500; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
+          "backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
         setTimeout(() => {
           loaderPage.classList.remove("loaderPage");
         }, 510);
