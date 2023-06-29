@@ -32,7 +32,12 @@ const findMyState = () => {
 
   function functionCall(searchForNewPlace) {
     searchForm.addEventListener("submit", searchForNewPlace);
-    returnBack.addEventListener("click", searchForNewPlace);
+    returnBack.addEventListener("click", () => {
+      if (newLocation.value.trim() !== "") {
+        defaultWeatherInfo(address);
+        newLocation.value = "";
+      }
+    });
   }
 
   async function defaultWeatherInfo(address) {
@@ -93,10 +98,10 @@ const findMyState = () => {
     function loaderFN(i) {
       if (i !== "Weekend") {
         loaderPage.style =
-          "backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
+          "background-color: #00000000; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
         setTimeout(() => {
           loaderPage.classList.remove("loaderPage");
-        }, 510);
+        }, 500);
       } else {
         loaderPage.style.display = "flex";
       }
