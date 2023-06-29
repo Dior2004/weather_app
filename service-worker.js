@@ -5,7 +5,7 @@ const cacheAssets = [
   "/favicon.ico",
   "index.html",
   "/style.css",
-  "/main.js",
+  "/app.js",
 ];
 
 self.addEventListener("install", (event) => {
