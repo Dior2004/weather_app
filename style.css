@@ -67,8 +67,8 @@ body {
   justify-content: center;
   position: relative;
   opacity: 0.25;
-  animation: loader 0.8s linear infinite;
-  animation-delay: calc(var(--i) * 0.1s);
+  animation: loader 0.6s linear infinite;
+  animation-delay: calc(var(--i) * 0.075s);
 }
 
 @keyframes loader {
