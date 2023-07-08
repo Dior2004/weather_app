@@ -141,6 +141,7 @@ body {
   box-shadow: 0 5px 10px #00000022;
   color: #fff;
   font-weight: 600;
+  font-size: 16px;
   letter-spacing: 0.6px;
   cursor: pointer;
 }
