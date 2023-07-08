@@ -1,6 +1,22 @@
 loaderValue.innerText = "Loading...";
 
-const findMyState = () => {
+if (!navigator.onLine) {
+  handleOfline();
+} else {
+  findMyState();
+}
+
+function handleOfline() {
+  setTimeout(() => {
+    loaderWrapper.style = "opacity: 0; transition: 0.3s";
+    networkError.style = "animation-name: spring; animation-duration: 0.5s;";
+    reloadPage.addEventListener("click", () => {
+      location.reload(true);
+    });
+  }, 1500);
+}
+
+function findMyState() {
   let address = "";
 
   const success = async (coordinates) => {
@@ -50,6 +66,18 @@ const findMyState = () => {
       .catch((error) => console.log("A small error has ocurred.", error));
   }
 
+  function loaderFN(i) {
+    if (i !== "Weekend") {
+      loaderPage.style =
+        "background-color: #00000000; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
+      setTimeout(() => {
+        loaderPage.classList.remove("loaderPage");
+      }, 500);
+    } else {
+      loaderPage.style.display = "flex";
+    }
+  }
+
   let weatherInfo = (allInfo) => {
     // Date
 
@@ -94,18 +122,6 @@ const findMyState = () => {
 
     dayTime.innerText = dayIndexNameMappings[dayIndexName] || "Weekday";
     let dayTimeVar = dayTime.innerText;
-
-    function loaderFN(i) {
-      if (i !== "Weekend") {
-        loaderPage.style =
-          "background-color: #00000000; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
-        setTimeout(() => {
-          loaderPage.classList.remove("loaderPage");
-        }, 500);
-      } else {
-        loaderPage.style.display = "flex";
-      }
-    }
 
     loaderFN(dayTimeVar);
 
@@ -164,17 +180,21 @@ const findMyState = () => {
     // New location
 
     let form = document.querySelector(".search_area");
+
     locationChange.addEventListener("click", () => {
       form.style = "right: 0%; transition: 0.55s ease-in-out;";
-      returnBack.addEventListener("click", () => {
-        form.style = "right: -100%; transition: 0.55s ease-in-out;";
-      });
+    });
+
+    returnBack.addEventListener("click", () => {
+      form.style = "right: -100%; transition: 0.55s ease-in-out;";
+    });
+
+    newLocation.addEventListener("focus", () => {
+      form.style = "right: 0%;";
     });
   };
 
   navigator.geolocation.getCurrentPosition(success, error, {
     enableHighAccuracy: true,
   }); // success & error functions
-};
-
-findMyState();
+}

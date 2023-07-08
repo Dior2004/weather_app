@@ -11,33 +11,42 @@
   </head>
   <body>
     <div class="none loaderPage" id="loaderPage">
-      <div class="loader">
-        <span class="column" style="--i: 0">
-          <div class="top"></div>
-        </span>
-        <span class="column" style="--i: 1">
-          <div class="top"></div>
-        </span>
-        <span class="column" style="--i: 2">
-          <div class="top"></div>
-        </span>
-        <span class="column" style="--i: 3">
-          <div class="top"></div>
-        </span>
-        <span class="column" style="--i: 4">
-          <div class="top"></div>
-        </span>
-        <span class="column" style="--i: 5">
-          <div class="top"></div>
-        </span>
-        <span class="column" style="--i: 6">
-          <div class="top"></div>
-        </span>
-        <span class="column" style="--i: 7">
-          <div class="top"></div>
-        </span>
+      <div id="loaderWrapper">
+        <div class="loader">
+          <span class="column" style="--i: 0">
+            <div class="top"></div>
+          </span>
+          <span class="column" style="--i: 1">
+            <div class="top"></div>
+          </span>
+          <span class="column" style="--i: 2">
+            <div class="top"></div>
+          </span>
+          <span class="column" style="--i: 3">
+            <div class="top"></div>
+          </span>
+          <span class="column" style="--i: 4">
+            <div class="top"></div>
+          </span>
+          <span class="column" style="--i: 5">
+            <div class="top"></div>
+          </span>
+          <span class="column" style="--i: 6">
+            <div class="top"></div>
+          </span>
+          <span class="column" style="--i: 7">
+            <div class="top"></div>
+          </span>
+        </div>
+        <h2 id="loaderValue" style="margin-top: 15px"></h2>
       </div>
-      <h2 id="loaderValue" style="margin-top: 15px"></h2>
+      <div id="networkError">
+        <h3>Seems You went Ofline</h3>
+        <span>
+          Please check your Internet connection and try reloading the page again
+        </span>
+        <button id="reloadPage">Reload</button>
+      </div>
     </div>
     <div class="container">
       <div class="main_weather_side">

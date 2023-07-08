@@ -34,6 +34,12 @@ body {
   background-color: #00000010;
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
+  display: grid;
+  place-items: center;
+  transition: 0.5s;
+}
+
+#loaderWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,6 +105,64 @@ body {
 
   87.5% {
     opacity: 0.25;
+  }
+}
+
+#networkError {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 15px 70px #00000055;
+  transform: scale(0);
+  animation-fill-mode: forwards;
+}
+
+#networkError > span {
+  margin: 8px 0;
+}
+
+#networkError > button {
+  width: 100px;
+  padding: 7px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #60bdffe8;
+  box-shadow: 0 5px 10px #00000022;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+}
+
+@keyframes spring {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
