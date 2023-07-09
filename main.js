@@ -3,7 +3,8 @@ let dependency = "";
 if (!navigator.onLine) {
   handleOfline();
 } else {
-  const interval = setInterval(findMyState, 500);
+  findMyState();
+  const interval = setInterval(findMyState, 3 * 60 * 1000);
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     changeDependency();
@@ -12,6 +13,7 @@ if (!navigator.onLine) {
   function changeDependency() {
     if (newLocation.value.trim() !== "") {
       dependency = newLocation.value.trim();
+      findMyState();
       newLocation.value = "";
     } else {
       newLocation.value = "";
