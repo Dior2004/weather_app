@@ -4,7 +4,7 @@ if (!navigator.onLine) {
   handleOfline();
 } else {
   findMyState();
-  const interval = setInterval(findMyState, 3 * 60 * 1000);
+  const interval = setInterval(findMyState, 60 * 1000);
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     changeDependency();
