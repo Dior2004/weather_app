@@ -57,7 +57,9 @@ function findMyState() {
     async function startLiveUpdate() {
       try {
         const response = await fetch(
-          `https://api.weatherapi.com/v1/forecast.json?key=039ce398b86741b895820456231506&q=Washington&days=7&aqi=yes&alerts=yes`
+          `https://api.weatherapi.com/v1/forecast.json?key=039ce398b86741b895820456231506&q=${
+            dependency === "" ? "New York" : dependency
+          }&days=7&aqi=yes&alerts=yes`
         );
         const allInfo = await response.json();
         weatherInfo(allInfo);
