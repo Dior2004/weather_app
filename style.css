@@ -48,16 +48,16 @@ body {
 }
 
 .loader {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   position: relative;
   display: flex;
   justify-content: center;
 }
 
 .column {
-  width: 13.5px;
-  height: 50px;
+  width: 9.5px;
+  height: 35px;
   position: absolute;
   transform: rotate(calc(45deg * var(--i)));
   transform-origin: bottom;
