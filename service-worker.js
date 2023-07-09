@@ -1,4 +1,4 @@
-const cacheName = "weather-app version1";
+const cacheName = "weather-app v1";
 
 const cacheAssets = [
   "/",

@@ -1,4 +1,3 @@
-loaderValue.innerText = "Loading...";
 let dependency = "";
 
 if (!navigator.onLine) {
