@@ -4,11 +4,6 @@ if (!navigator.onLine) {
   handleOffline();
 } else {
   findMyState();
-  const intervalOfflineCheck = setInterval(() => {
-    if (!navigator.onLine) {
-      window.location.reload(true);
-    }
-  }, 30 * 1000);
   const infoUpdate = setInterval(findMyState, 60 * 1000);
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
