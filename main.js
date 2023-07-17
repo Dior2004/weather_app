@@ -1,17 +1,24 @@
 let dependency = "";
 
 if (!navigator.onLine) {
-  handleOfline();
+  handleOffline();
 } else {
   findMyState();
-  const interval = setInterval(findMyState, 60 * 1000);
+  const intervalOfflineCheck = setInterval(() => {
+    if (!navigator.onLine) {
+      window.location.reload(true);
+    }
+  }, 30 * 1000);
+  const infoUpdate = setInterval(findMyState, 60 * 1000);
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     changeDependency();
   });
   returnBack.addEventListener("click", changeDependency);
   function changeDependency() {
-    if (newLocation.value.trim() !== "") {
+    if (!navigator.onLine) {
+      window.location.reload(true);
+    } else if (newLocation.value.trim() !== "") {
       dependency = newLocation.value.trim();
       findMyState();
       newLocation.value = "";
@@ -21,7 +28,7 @@ if (!navigator.onLine) {
   }
 }
 
-function handleOfline() {
+function handleOffline() {
   setTimeout(() => {
     loaderWrapper.style = "opacity: 0; transition: 0.3s";
     networkError.style = "animation-name: spring; animation-duration: 0.5s;";
