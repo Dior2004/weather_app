@@ -72,7 +72,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  opacity: 0.25;
+  opacity: 0.1;
   animation: loader 0.7s linear infinite;
   animation-delay: calc(var(--i) * 0.0875s);
 }
@@ -80,7 +80,7 @@ body {
 @keyframes loader {
   0%,
   100% {
-    opacity: 0.25;
+    opacity: 0.1;
   }
   12.5% {
     opacity: 1;
@@ -100,11 +100,11 @@ body {
   }
 
   75% {
-    opacity: 0.25;
+    opacity: 0.2;
   }
 
   87.5% {
-    opacity: 0.25;
+    opacity: 0.1;
   }
 }
 
