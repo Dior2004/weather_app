@@ -82,10 +82,10 @@ function loaderFN(i) {
   if (i !== "Weekend") {
     loaderPage.style =
       "background-color: #00000000; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px)";
+    document.querySelector(".list:first-child").style =
+      "background-color: #fff; color: #000;";
     setTimeout(() => {
       loaderPage.classList.remove("loaderPage");
-      document.querySelector(".list:first-child").style =
-        "background-color: #fff; color: #000;";
     }, 500);
   } else {
     loaderPage.style.display = "flex";
